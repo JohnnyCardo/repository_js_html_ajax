@@ -1,0 +1,4 @@
+Você clicou para testar o ajax!
+
+
+Não é necessário recarregar a página.

@@ -1,0 +1,31 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code to change the text with AJAX</title>
+</head>
+<body>
+
+<div id="test"><h2>This is a exercise to change this text with AJAX!</h2></div>
+
+<button type="button" onclick="changeText()">Change Content with AJAX</button>
+
+<script language="javascript" type="text/javascript">
+
+function changeText() {
+//O XMLHttpRequest é um objeto que pode ser usado para fazer uma requisição num servidor web
+  var xhttp = new XMLHttpRequest();
+//Função para chamar automaticamente cada vez que o readyState mudar
+  xhttp.onreadystatechange = function() {
+//Status 200 = OK; readystate = 4 quando a requisição acabar e a resposta estiver pronta
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("test").innerHTML = this.responseText;
+    }
+  };
+//fazendo uma requisição GET para ler o arquivo txt
+  xhttp.open("GET", "textTest.txt", true); 
+  xhttp.send();
+}
+</script>
+</body>
+</html>
